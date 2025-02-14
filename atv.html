@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <script>
+        function verifica(salario)
+        {
+          var  salF = salario/12;
+          var ir = 0;
+
+            if(salF > 2500 && salF <= 3500)
+            {
+                ir = salF*0.10;
+
+            }else if(salF > 3500 && salF <= 4500)
+            {
+                ir = salF*0.15;
+            
+            }else if(salF > 4500)
+            {
+                ir = salF*0.27
+            } 
+            
+            return ir;
+        }
+        function calculoIR()
+        {
+            nome = document.getElementById("nome").value;
+            idade = document.getElementById("idade").value;
+            sal = document.getElementById("salarioAnual").value;
+
+    
+
+            resultado = "Olá "+nome+"! o imposto de renda a ser pago será: "+verifica(sal);
+
+            document.getElementById("print").innerHTML = resultado;
+        }
+    </script>
+</head>
+<script>
+
+</script>
+<body>
+    <h1>Calculo de Imposto de renda</h1>
+
+    <p><input type="text" id="nome" placeholder="entre com seu nome"></p>
+    <p><input type="number" id="idade" placeholder="entre com sua idade"></p>
+    <p><input type="text" id="salarioAnual" placeholder="entre com seu salário anual"></p>
+    <button onclick="calculoIR()">Exibir</button>
+    <p id="print"></p>
+
+</body>
+</html>
