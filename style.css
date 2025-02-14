@@ -17,15 +17,27 @@ input
     margin-left: 10px;
     text-align: center;
     background-color: antiquewhite;
+    box-shadow: 1px 4px 20px 6px #ffffff;
 }
 
 button
 {
-    margin: 10px; 
-    box-shadow: 1px;
+    margin: 100px;
     text-align: center;
     background-color: antiquewhite;
-
     width: 70px;
+    box-sizing: border-box;
+    box-shadow: 4px 4px 20px 8px aliceblue;
+    border-width: medium;
 }
+#print
+{
 
+background: coral;
+
+width: 50%;
+
+margin-left: 26%;
+
+border-radius: 20px;
+}
