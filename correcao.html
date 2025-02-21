@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function calcularIr() {
+            var aliquota = [0, 0.075, 0.15, 0.225, 0.275];
+            var deducao = [0, 169.44, 381.44, 662.77, 896];
+            var valor = [2259.20, 2826.65, 3751.05, 4664.68, 1000000000000000000000];
+            var rendames = document.getElementById("salarioMensal").value;
+            var nome = getElementById("nome").value;
+            var imposto = 0;
+            for (let i; i < 5; i++) {
+                if (rendames < valor[i]) {
+                    imposto = rendames * aliquota[i] - deducao[i];
+                    var resultado = nome + " seu imposto é de " + imposto + " reais com base em sua renda mensal " +
+                     rendames + " reais e seu valor de dedução é de " + deducao[i] + " reais"
+                     i = 10;
+                }
+                document.getElementById("resultado").innerHTML = resultado
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <h1>Calculo de Imposto de renda</h1>
+
+    <p><input type="text" id="nome" placeholder="entre com seu nome"></p>
+    <p><input type="text" id="salarioMensal" placeholder="entre com seu salário mensal"></p>
+    <button onclick="calcularIr()">Exibir</button>
+    <p id="resultado"></p>
+</body>
+
+</html>

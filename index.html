@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,40 +8,37 @@
     <link rel="stylesheet" href="style.css">
     <script>
         $nome = ['nome']
-        function exibirNome()
-
-        {
+        function exibirNome() {
             var n = document.getElementById("nome").value;
             var i = document.getElementById("idade").value;
             var s = document.getElementById("seguro").value;
-            
-            if( i>=18 && i<=25 )
-            {
-                s= s*1.25;
 
-            }else if(i > 25 && i<=32)
-            {
-                s = s*1.15;
+            if (i >= 18 && i <= 25) {
+                s = s * 1.25;
 
-            }else if(i > 32 && i <= 45)
-            {
-                s = s*1.10
+            } else if (i > 25 && i <= 32) {
+                s = s * 1.15;
+
+            } else if (i > 32 && i <= 45) {
+                s = s * 1.10
             }
 
-            var resultado = "Olá "+n+", seu seguro total é de "+s;
+            var resultado = "Olá " + n + ", seu seguro total é de " + s;
 
             document.getElementById("print").innerHTML = resultado;
         }
     </script>
 </head>
+
 <body>
     <h1>Calculando seguro</h1>
-<p><input type="teste" id="nome" placeholder="Entre com seu nome"></p>
-<p><input type="teste" id="idade" placeholder="Entre com sua idade"></p>
-<p><input type="teste" id="seguro" placeholder="Entre com o valor inicial do seguro"></p>
+    <p><input type="teste" id="nome" placeholder="Entre com seu nome"></p>
+    <p><input type="teste" id="idade" placeholder="Entre com sua idade"></p>
+    <p><input type="teste" id="seguro" placeholder="Entre com o valor inicial do seguro"></p>
 
-<button onclick="exibirNome()">Exibir</button>
+    <button onclick="exibirNome()">Exibir</button>
 
-<p id="print"></p>
+    <p id="print"></p>
 </body>
+
 </html>

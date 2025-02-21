@@ -1,16 +1,15 @@
-*{
-    margin:0;
+* {
+    margin: 0;
     padding: 0;
     background-color: rgb(200, 204, 204);
     text-align: center;
 }
 
-h1{
-margin-top: 50px;
+h1 {
+    margin-top: 50px;
 }
 
-input
-{
+input {
     margin-top: 20px;
     margin: 10px;
     padding: 2px;
@@ -20,8 +19,7 @@ input
     box-shadow: 1px 4px 20px 6px #ffffff;
 }
 
-button
-{
+button {
     margin: 100px;
     text-align: center;
     background-color: antiquewhite;
@@ -30,14 +28,14 @@ button
     box-shadow: 4px 4px 20px 8px aliceblue;
     border-width: medium;
 }
-#print
-{
 
-background: coral;
+#print {
 
-width: 50%;
+    background: coral;
 
-margin-left: 26%;
+    width: 50%;
 
-border-radius: 20px;
+    margin-left: 26%;
+
+    border-radius: 20px;
 }

@@ -1,61 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <!-- <link rel="stylesheet" href="style.css"> -->
     <script>
-        function verifica(salario)
-        {
+        function verifica(salario) {
 
-          var ir = 0;
-          var desconto = 0
-            if(salario <= 2259.20)
-            {
+            var ir = 0;
+            var desconto = 0
+            if (salario <= 2259.20) {
                 ir = 0;
-                
-            }
-            else if(salario > 2259.20 && salario <= 2826.65)
-            {
-                desconto = 169,44
-                ir = salario * 0.075 - desconto;
-                document.getElementById("descontoIr").innerHTML = "O valor do desconto do imposto de renda é: "+desconto.toFixed(2);
 
-            }else if(salario > 2826.65 && salario <= 3751.05)
-            {
+            }
+            else if (salario > 2259.20 && salario <= 2826.65) {
+                desconto = 169, 44
+                ir = salario * 0.075 - desconto;
+                document.getElementById("descontoIr").innerHTML = "O valor do desconto do imposto de renda é: " + desconto.toFixed(2);
+
+            } else if (salario > 2826.65 && salario <= 3751.05) {
                 desconto = 381.44
                 ir = salario * 0.15 - desconto;
-                document.getElementById("descontoIr").innerHTML = "O valor do desconto do imposto de renda é: "+desconto.toFixed(2);              
+                document.getElementById("descontoIr").innerHTML = "O valor do desconto do imposto de renda é: " + desconto.toFixed(2);
 
-            }else if(salario > 3751.05 && salario <= 4664.68)
-            {
+            } else if (salario > 3751.05 && salario <= 4664.68) {
                 desconto = 662.77
                 ir = salario * 0.225 - desconto;
-                document.getElementById("descontoIr").innerHTML = "O valor do desconto do imposto de renda é: "+desconto.toFixed(2);
+                document.getElementById("descontoIr").innerHTML = "O valor do desconto do imposto de renda é: " + desconto.toFixed(2);
 
-            }else  //if(salario > 4664,68)
+            } else  //if(salario > 4664,68)
             {
                 desconto = 896
                 ir = salario * 0.275 - desconto;
-                document.getElementById("descontoIr").innerHTML = "O valor do desconto do imposto de renda é: "+desconto.toFixed(2);
+                document.getElementById("descontoIr").innerHTML = "O valor do desconto do imposto de renda é: " + desconto.toFixed(2);
 
             }
-            
+
             return parseFloat(ir);
         }
-        function calculoIR()
-        {
+        function calculoIR() {
             nome = document.getElementById("nome").value;
             salarioMensal = document.getElementById("salarioMensal").value;
 
-            resultado = "Olá "+nome+", o seu salario Mensal é "+salarioMensal+
-            ", o imposto de renda a ser pago será: "+verifica(salarioMensal).toFixed(2);
+            resultado = "Olá " + nome + ", o seu salario Mensal é " + salarioMensal +
+                ", o imposto de renda a ser pago será: " + verifica(salarioMensal).toFixed(2);
 
             document.getElementById("print").innerHTML = resultado;
         }
     </script>
 </head>
+
 <body>
     <h1>Calculo de Imposto de renda</h1>
 
@@ -66,4 +62,5 @@
     <p id="descontoIr"></p>
 
 </body>
+
 </html>
