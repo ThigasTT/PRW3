@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function Cadastrar(){
+            var cpfjs = document.getElementById("cpf").value;
+            var nomejs = document.getElementById("nome").value;
+            var contatojs = document.getElementById("contato").value;
+            var requisicao = new XMLHttpRequest();
+            
+            requisicao.open("GET", "controllerPessoa.php?cpf="+cpfjs+"&nome="+nomejs+"&contato="
+            +contatojs+"&acao=inserir");
+
+            requisicao.send();
+
+            requisicao.onload = function(){
+                alert(this.responseText);
+            }
+        }
+        function Apagar(){
+            var cpfjs = document.getElementById("cpf").value;
+             var requisicao = new XMLHttpRequest();
+          requisicao.open("GET", "controllerPessoa.php?cpf=" + cpfjs + "&acao=apagar");
+
+             requisicao.send();
+
+             requisicao.onload = function() {
+             alert(this.responseText);
+         };
+         }
+        function Atualizar(){
+            var cpfjs = document.getElementById("cpf").value;
+            var nomejs = document.getElementById("nome").value;
+            var contatojs = document.getElementById("contato").value;
+            var requisicao = new XMLHttpRequest();
+            
+            requisicao.open("GET", "controllerPessoa.php?&acao=atualizar");
+
+            requisicao.send();
+
+
+            requisicao.onload = function(){
+                alert(this.responseText);
+            }
+        }
+        
+        function Consultar(){
+            var cpfjs = document.getElementById("cpf").value;
+            var nomejs = document.getElementById("nome").value;
+            var contatojs = document.getElementById("contato").value;
+            var requisicao = new XMLHttpRequest();
+            
+            requisicao.open("GET", "controllerPessoa.php?cpf="+cpfjs+"&nome="+nomejs+"&contato="
+            +contatojs+"&acao=consultar");
+
+            requisicao.send();
+
+            requisicao.onload = function(){
+                alert(this.responseText);
+            }
+        }
+    </script>
+</head>
+<body>
+    <p><input id="cpf" placeholder="CPF"></p>
+    <p><input id="nome" placeholder="Nome"></p>
+    <p><input id="contato" placeholder="Contato"></p>
+    <p><button onclick="Cadastrar()">Cadastrar</button></p>
+    <p><button onclick="Apagar()">Apagar</button></p>
+    <p><button onclick="Atualizar()">Atualizar</button></p>
+    <p><button onclick="Consultar()">Consultar</button></p>
+    <p id="resultado"></p>
+</body>
+</html>
