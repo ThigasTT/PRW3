@@ -7,12 +7,13 @@
     <script>
         function Cadastrar(){
             var cpfjs = document.getElementById("cpf").value;
-            var nomejs = document.getElementById("nome").value;
-            var contatojs = document.getElementById("contato").value;
+            var datajs = document.getElementById("data").value;
+            var descricaojs = document.getElementById("descricao").value;
             var requisicao = new XMLHttpRequest();
             
-            requisicao.open("GET", "controllerPessoa.php?cpf="+cpfjs+"&nome="+nomejs+"&contato="
-            +contatojs+"&acao=inserir");
+            requisicao.open("GET", "controllerAgenda.php?cpf="+cpfjs+"&data="+$data+"&descricao="
+            +descricaojs+"&acao=inserir");
+            alert(requisicao);
 
             requisicao.send();
 
@@ -23,7 +24,7 @@
         function Apagar(){
             var cpfjs = document.getElementById("cpf").value;
              var requisicao = new XMLHttpRequest();
-          requisicao.open("GET", "controllerPessoa.php?cpf=" + cpfjs + "&acao=apagar");
+          requisicao.open("GET", "controllerAgenda.php?cpf=" +$cpfjs+ "&acao=apagar");
 
              requisicao.send();
 
@@ -33,11 +34,11 @@
          }
         function Atualizar(){
             var cpfjs = document.getElementById("cpf").value;
-            var nomejs = document.getElementById("nome").value;
-            var contatojs = document.getElementById("contato").value;
+            var datajs = document.getElementById("data").value;
+            var descricaojs = document.getElementById("descricao").value;
             var requisicao = new XMLHttpRequest();
             
-            requisicao.open("GET", "controllerPessoa.php?&acao=atualizar");
+            requisicao.open("GET", "controllerAgenda.php?&acao=atualizar");
 
             requisicao.send();
 
@@ -49,11 +50,11 @@
         
         function Consultar(){
             var cpfjs = document.getElementById("cpf").value;
-            var nomejs = document.getElementById("nome").value;
-            var contatojs = document.getElementById("contato").value;
+            var datajs = document.getElementById("data").value;
+            var descricaojs = document.getElementById("descricao").value;
             var requisicao = new XMLHttpRequest();
             
-            requisicao.open("GET", "controllerPessoa.php?cpf="+cpfjs+"&nome="+nomejs+"&contato="
+            requisicao.open("GET", "controllerAgenda.php?cpf="+cpfjs+"&nome="+nomejs+"&contato="
             +contatojs+"&acao=consultar");
 
             requisicao.send();
@@ -66,15 +67,15 @@
 </head>
 <body>
     <nav>
-           <ul>
+        <ul>
             <li>
-                <a href="agenda.html">agenda</a>
-           </li>
+                <a href="index.html">home</a>
+            </li>
         </ul>
     </nav>
-    <p><input id="cpf" placeholder="CPF"></p>
-    <p><input id="nome" placeholder="Nome"></p>
-    <p><input id="contato" placeholder="Contato"></p>
+    <p><input id="cpf" placeholder="cpf"></p>
+    <p><input id="data" placeholder="data"></p>
+    <p><input id="descricao" placeholder="descricao"></p>
     <p><button onclick="Cadastrar()">Cadastrar</button></p>
     <p><button onclick="Apagar()">Apagar</button></p>
     <p><button onclick="Atualizar()">Atualizar</button></p>
